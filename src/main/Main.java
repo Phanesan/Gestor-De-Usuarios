@@ -10,7 +10,7 @@ public class Main {
             @Override
             public void run() {
                 FlatLightLaf.setup(); // Look and feel
-                Window window = new Window();
+                WindowFrame windowFrame = new WindowFrame();
             }
         });
     }

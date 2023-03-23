@@ -10,12 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d79fe69-3fec-4ace-af2a-11478820b4e4" name="Changes" comment="Se agrego el main, frame principal y un LookAndFeel">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Gestor_de_usuarios_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/FontManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/WindowFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/panels/SplashPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/font/Quicksand-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/font/Quicksand-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/font/Quicksand-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/font/Quicksand-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/font/Quicksand-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/font/Quicksand-VariableFont_wght.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Gestor_de_usuarios_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Gestor_de_usuarios_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Window.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,19 +52,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yahir/Escritorio/TRABAJOS UNI/Programacion/Diseno1&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/yahir/Desktop/PROGRAMACION/Gestor-De-Usuarios",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yahir\Desktop\PROGRAMACION\Gestor-De-Usuarios\src\resources\font" />
+      <recent name="C:\Users\yahir\Desktop\PROGRAMACION\Gestor-De-Usuarios\src\resources" />
+      <recent name="C:\Users\yahir\Desktop\PROGRAMACION\Gestor-De-Usuarios" />
+      <recent name="C:\Users\yahir\Desktop\PROGRAMACION\Gestor-De-Usuarios\src\main" />
       <recent name="C:\Users\yahir\Escritorio\TRABAJOS UNI\Programacion\Gestor de usuarios\lib" />
     </key>
   </component>
