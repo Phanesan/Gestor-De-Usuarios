@@ -1,3 +1,5 @@
+package main;
+
 import com.formdev.flatlaf.FlatLightLaf;
 
 import javax.swing.*;
