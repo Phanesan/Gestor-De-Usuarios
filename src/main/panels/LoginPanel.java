@@ -7,8 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 public class LoginPanel extends JPanel {
 
@@ -27,15 +26,15 @@ public class LoginPanel extends JPanel {
         icon.setBounds(150,40,180,180);
         add(icon);
 
-        JLabel userText = new JLabel("Usuario");
-        userText.setFont(new Font("Arial",Font.PLAIN,30));
-        userText.setBounds(113,255,150,40);
-        add(userText);
+        JLabel mailText = new JLabel("Correo");
+        mailText.setFont(new Font("Arial",Font.PLAIN,30));
+        mailText.setBounds(113,255,150,40);
+        add(mailText);
 
-        JTextField userField = new JTextField();
-        userField.setBounds(110,300,260,40);
-        userField.setFont(instance.getFontManager().quicksand_light.deriveFont(25f));
-        add(userField);
+        JTextField mailField = new JTextField();
+        mailField.setBounds(110,300,260,40);
+        mailField.setFont(instance.getFontManager().quicksand_light.deriveFont(20f));
+        add(mailField);
 
         JLabel passwordText = new JLabel("Contraseña");
         passwordText.setFont(new Font("Arial",Font.PLAIN,30));
@@ -47,14 +46,57 @@ public class LoginPanel extends JPanel {
         add(passwordField);
 
         JButton login = new JButton("Iniciar Sesión");
-        login.setBounds(181,490,110,30);
+        login.setFont(instance.getFontManager().quicksand_bold.deriveFont(13f));
+        login.setBounds(241,490,130,30);
         login.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String mail = mailField.getText();
+                String password = String.valueOf(passwordField.getPassword());
 
+                File file = new File("src\\resources\\users.txt");
+
+                try {
+                    BufferedReader br = new BufferedReader(new FileReader(file));
+
+                    String line = br.readLine();
+                    while(line != null) {
+                        String data[] = line.split(",");
+
+                        if(data[2].equals(mail)) {
+                            if(data[3].equals(password)) {
+                                JOptionPane.showMessageDialog(null, "Acceso correcto", "Login", JOptionPane.PLAIN_MESSAGE);
+                                instance.changePanel(null); // Cambia al menu
+                                return;
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Contraseña incorrecta", "Login", JOptionPane.PLAIN_MESSAGE);
+                                return;
+                            }
+                        }
+                        line = br.readLine();
+                    }
+                    JOptionPane.showMessageDialog(null, "El correo no existe", "Login", JOptionPane.PLAIN_MESSAGE);
+
+                } catch (FileNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
         add(login);
+
+        JButton register = new JButton("Registrarse ahora");
+        register.setFont(instance.getFontManager().quicksand_bold.deriveFont(10f));
+        register.setBounds(110,490,110,30);
+        register.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                instance.changePanel(new RegisterPanel(instance));
+            }
+        });
+        add(register);
+
 
         revalidate();
         repaint();

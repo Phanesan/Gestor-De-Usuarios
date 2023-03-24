@@ -4,6 +4,7 @@ import main.panels.LoginPanel;
 import main.panels.SplashPanel;
 
 import javax.swing.*;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -25,6 +26,7 @@ public class WindowFrame extends JFrame {
         instance = this;
         fontManager = new FontManager();
         init();
+        initUsersDB();
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -59,6 +61,22 @@ public class WindowFrame extends JFrame {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    /**
+     * Inicializa el archivo users.txt
+     */
+    private void initUsersDB() {
+        File usersFile = new File("src\\resources\\users.txt");
+        if(!usersFile.exists()) {
+            try {
+                usersFile.createNewFile();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("users.txt creado con exito!");
+        } else
+            System.out.println("users.txt cargado correctamente!");
     }
 
     /**
