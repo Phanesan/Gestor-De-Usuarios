@@ -9,24 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d79fe69-3fec-4ace-af2a-11478820b4e4" name="Changes" comment="Se agrego el main, frame principal y un LookAndFeel">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/FontManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/WindowFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/panels/SplashPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/font/Quicksand-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/font/Quicksand-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/font/Quicksand-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/font/Quicksand-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/font/Quicksand-SemiBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/font/Quicksand-VariableFont_wght.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Gestor_de_usuarios_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Gestor_de_usuarios_jar.xml" afterDir="false" />
+    <list default="true" id="9d79fe69-3fec-4ace-af2a-11478820b4e4" name="Changes" comment="Se le agrego un icono al programa">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Window.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/WindowFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WindowFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/panels/LoginPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/panels/LoginPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +43,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/yahir/Desktop/PROGRAMACION/Gestor-De-Usuarios",
+    "last_opened_file_path": "C:/Users/yahir/Escritorio/TRABAJOS UNI/Programacion/Gestor de usuarios",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -91,6 +77,17 @@
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Se agrego el main, frame principal y un LookAndFeel" />

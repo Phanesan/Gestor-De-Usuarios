@@ -1,5 +1,6 @@
 package main;
 
+import main.panels.LoginPanel;
 import main.panels.SplashPanel;
 
 import javax.swing.*;
@@ -21,21 +22,23 @@ public class WindowFrame extends JFrame {
     private WindowFrame instance;
 
     public WindowFrame() {
+        instance = this;
         fontManager = new FontManager();
         init();
 
-        new Runnable() {
+        Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 changePanel(new SplashPanel(instance));
                 try {
-                    wait(3000);
+                    Thread.sleep(2500);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
-
+                changePanel(new LoginPanel(instance));
             }
-        };
+        });
+        thread.start();
     }
 
     /**
@@ -65,9 +68,11 @@ public class WindowFrame extends JFrame {
     public void changePanel(JPanel panel) {
         if(activePanel != null) {
             remove(activePanel);
+            activePanel = null;
         }
         if(panel != null) {
             add(panel);
+            activePanel = panel;
         }
         revalidate();
         repaint();
