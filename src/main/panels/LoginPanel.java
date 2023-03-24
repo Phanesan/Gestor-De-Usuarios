@@ -66,7 +66,9 @@ public class LoginPanel extends JPanel {
                         if(data[2].equals(mail)) {
                             if(data[3].equals(password)) {
                                 JOptionPane.showMessageDialog(null, "Acceso correcto", "Login", JOptionPane.PLAIN_MESSAGE);
-                                instance.changePanel(null); // Cambia al menu
+                                instance.getUser().login(data[0],data[1],data[2],data[3]);
+                                instance.changePanel(new MenuPanel(instance,instance.getUser())); // Cambia al menu
+                                instance.blockBarMenu(false);
                                 return;
                             } else {
                                 JOptionPane.showMessageDialog(null, "Contraseña incorrecta", "Login", JOptionPane.PLAIN_MESSAGE);
@@ -87,7 +89,7 @@ public class LoginPanel extends JPanel {
         add(login);
 
         JButton register = new JButton("Registrarse ahora");
-        register.setFont(instance.getFontManager().quicksand_bold.deriveFont(10f));
+        register.setFont(instance.getFontManager().quicksand_bold.deriveFont(9f));
         register.setBounds(110,490,110,30);
         register.addActionListener(new ActionListener() {
             @Override

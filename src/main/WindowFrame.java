@@ -21,12 +21,19 @@ public class WindowFrame extends JFrame {
     private FontManager fontManager;
 
     private WindowFrame instance;
+    private LoggedUser user;
+    private JMenu cuenta;
+    private JMenu usuarios;
+    private JMenu ayuda;
 
     public WindowFrame() {
         instance = this;
+        user = new LoggedUser();
         fontManager = new FontManager();
         init();
         initUsersDB();
+        initBar();
+        blockBarMenu(true);
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -64,6 +71,38 @@ public class WindowFrame extends JFrame {
     }
 
     /**
+     * Inicializa el Bar Menu
+     */
+    private void initBar() {
+        JMenuBar bar = new JMenuBar();
+        cuenta = new JMenu("Cuenta");
+        usuarios = new JMenu("Usuarios");
+        ayuda = new JMenu("Ayuda");
+
+        JMenuItem mi_cuenta = new JMenuItem("Mi Cuenta");
+        JMenuItem cerrar_sesion = new JMenuItem("Cerrar Sesión");
+
+        JMenuItem lista_usuarios = new JMenuItem("Lista de Usuarios");
+        JMenuItem crear_usuarios = new JMenuItem("Crear Usuarios");
+
+        JMenuItem como_crear = new JMenuItem("¿Como crear usuarios?");
+
+        cuenta.add(mi_cuenta);
+        cuenta.add(cerrar_sesion);
+
+        usuarios.add(lista_usuarios);
+        usuarios.add(crear_usuarios);
+
+        ayuda.add(como_crear);
+
+        bar.add(cuenta);
+        bar.add(usuarios);
+        bar.add(ayuda);
+
+        setJMenuBar(bar);
+    }
+
+    /**
      * Inicializa el archivo users.txt
      */
     private void initUsersDB() {
@@ -77,6 +116,16 @@ public class WindowFrame extends JFrame {
             System.out.println("users.txt creado con exito!");
         } else
             System.out.println("users.txt cargado correctamente!");
+    }
+
+    /**
+     * Bloquea el Menu Bar
+     * @param block true para bloquear el menu y false para desbloquear
+     */
+    public void blockBarMenu(boolean block) {
+        cuenta.setEnabled(!block);
+        usuarios.setEnabled(!block);
+        ayuda.setEnabled(!block);
     }
 
     /**
@@ -98,5 +147,9 @@ public class WindowFrame extends JFrame {
 
     public FontManager getFontManager() {
         return fontManager;
+    }
+
+    public LoggedUser getUser() {
+        return user;
     }
 }
