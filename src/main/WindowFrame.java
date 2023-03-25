@@ -1,6 +1,7 @@
 package main;
 
 import main.panels.AccountPanel;
+import main.panels.CreateUserPanel;
 import main.panels.LoginPanel;
 import main.panels.SplashPanel;
 
@@ -28,7 +29,7 @@ public class WindowFrame extends JFrame {
         init();
         initUsersDB();
         initBar();
-        blockBarMenu(true);
+        blockBarMenu(false);
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -98,6 +99,13 @@ public class WindowFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 changePanel(new AccountPanel(instance));
+            }
+        });
+
+        crear_usuarios.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                changePanel(new CreateUserPanel(instance));
             }
         });
 

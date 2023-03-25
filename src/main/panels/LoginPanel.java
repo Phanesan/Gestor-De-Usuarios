@@ -68,7 +68,7 @@ public class LoginPanel extends JPanel {
                             if(data[3].equals(password)) {
                                 JOptionPane.showMessageDialog(null, "Acceso correcto", "Login", JOptionPane.PLAIN_MESSAGE);
                                 instance.getUser().login(data[0],data[1],data[2],data[3],iterator);
-                                instance.changePanel(new MenuPanel(instance,instance.getUser())); // Cambia al menu
+                                instance.changePanel(new MenuPanel(instance)); // Cambia al menu
                                 instance.blockBarMenu(false);
                                 return;
                             } else {
