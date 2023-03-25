@@ -1,5 +1,6 @@
 package main;
 
+import main.panels.AccountPanel;
 import main.panels.LoginPanel;
 import main.panels.SplashPanel;
 
@@ -12,16 +13,8 @@ import java.io.InputStream;
 
 public class WindowFrame extends JFrame {
 
-    /**
-     * El panel visible actual
-     */
     private JPanel activePanel;
-
-    /**
-     * Fuentes personalizadas
-     */
     private FontManager fontManager;
-
     private WindowFrame instance;
     private LoggedUser user;
     private JMenu cuenta;
@@ -91,6 +84,23 @@ public class WindowFrame extends JFrame {
 
         cuenta.add(mi_cuenta);
         cuenta.add(cerrar_sesion);
+
+        usuarios.add(lista_usuarios);
+        usuarios.add(crear_usuarios);
+
+        ayuda.add(como_crear);
+
+        bar.add(cuenta);
+        bar.add(usuarios);
+        bar.add(ayuda);
+
+        mi_cuenta.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                changePanel(new AccountPanel(instance));
+            }
+        });
+
         cerrar_sesion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -104,15 +114,6 @@ public class WindowFrame extends JFrame {
                 }
             }
         });
-
-        usuarios.add(lista_usuarios);
-        usuarios.add(crear_usuarios);
-
-        ayuda.add(como_crear);
-
-        bar.add(cuenta);
-        bar.add(usuarios);
-        bar.add(ayuda);
 
         setJMenuBar(bar);
     }

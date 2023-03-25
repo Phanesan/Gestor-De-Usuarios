@@ -60,13 +60,14 @@ public class LoginPanel extends JPanel {
                     BufferedReader br = new BufferedReader(new FileReader(file));
 
                     String line = br.readLine();
+                    int iterator = 0;
                     while(line != null) {
                         String data[] = line.split(",");
 
                         if(data[2].equals(mail)) {
                             if(data[3].equals(password)) {
                                 JOptionPane.showMessageDialog(null, "Acceso correcto", "Login", JOptionPane.PLAIN_MESSAGE);
-                                instance.getUser().login(data[0],data[1],data[2],data[3]);
+                                instance.getUser().login(data[0],data[1],data[2],data[3],iterator);
                                 instance.changePanel(new MenuPanel(instance,instance.getUser())); // Cambia al menu
                                 instance.blockBarMenu(false);
                                 return;
@@ -76,6 +77,7 @@ public class LoginPanel extends JPanel {
                             }
                         }
                         line = br.readLine();
+                        iterator++;
                     }
                     JOptionPane.showMessageDialog(null, "El correo no existe", "Login", JOptionPane.PLAIN_MESSAGE);
 
