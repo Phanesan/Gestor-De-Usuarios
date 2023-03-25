@@ -4,6 +4,8 @@ import main.panels.LoginPanel;
 import main.panels.SplashPanel;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -89,6 +91,19 @@ public class WindowFrame extends JFrame {
 
         cuenta.add(mi_cuenta);
         cuenta.add(cerrar_sesion);
+        cerrar_sesion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int opc = JOptionPane.showConfirmDialog(instance,"¿Seguro que quieres cerrar sesión?","Gestor de Usuario",JOptionPane.YES_NO_OPTION,JOptionPane.INFORMATION_MESSAGE);
+                if(opc == 0) {
+                    if(user.isAccountOpen()) {
+                        user.logout();
+                    }
+                    blockBarMenu(true);
+                    changePanel(new LoginPanel(instance));
+                }
+            }
+        });
 
         usuarios.add(lista_usuarios);
         usuarios.add(crear_usuarios);
