@@ -1,9 +1,6 @@
 package main;
 
-import main.panels.AccountPanel;
-import main.panels.CreateUserPanel;
-import main.panels.LoginPanel;
-import main.panels.SplashPanel;
+import main.panels.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -106,6 +103,13 @@ public class WindowFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 changePanel(new CreateUserPanel(instance));
+            }
+        });
+
+        como_crear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                changePanel(new HelpPanel(instance));
             }
         });
 
