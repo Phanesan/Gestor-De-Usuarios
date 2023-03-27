@@ -1,5 +1,6 @@
 package main;
 
+import main.component.ButtonDelete;
 import main.panels.*;
 
 import javax.swing.*;
@@ -26,7 +27,7 @@ public class WindowFrame extends JFrame {
         init();
         initUsersDB();
         initBar();
-        blockBarMenu(false);
+        blockBarMenu(true);
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -113,6 +114,13 @@ public class WindowFrame extends JFrame {
             }
         });
 
+        lista_usuarios.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                changePanel(new ListUsersPanel(instance));
+            }
+        });
+
         cerrar_sesion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -134,16 +142,14 @@ public class WindowFrame extends JFrame {
      * Inicializa el archivo users.txt
      */
     private void initUsersDB() {
-        File usersFile = new File("src\\resources\\users.txt");
-        if(!usersFile.exists()) {
-            try {
-                usersFile.createNewFile();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            System.out.println("users.txt creado con exito!");
-        } else
-            System.out.println("users.txt cargado correctamente!");
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("resources/users.txt");
+
+        if (inputStream != null) {
+            System.out.println("users.txt cargado correctamente");
+        } else {
+            JOptionPane.showMessageDialog(instance, "La base de datos no ha sido encontrada por lo que el programa no puede continuar", "Gestor de Usuarios", JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
+        }
     }
 
     /**

@@ -66,20 +66,20 @@ public class LoginPanel extends JPanel {
 
                         if(data[2].equals(mail)) {
                             if(data[3].equals(password)) {
-                                JOptionPane.showMessageDialog(null, "Acceso correcto", "Login", JOptionPane.PLAIN_MESSAGE);
+                                JOptionPane.showMessageDialog(instance, "Acceso correcto", "Login", JOptionPane.PLAIN_MESSAGE);
                                 instance.getUser().login(data[0],data[1],data[2],data[3],iterator);
                                 instance.changePanel(new MenuPanel(instance)); // Cambia al menu
                                 instance.blockBarMenu(false);
                                 return;
                             } else {
-                                JOptionPane.showMessageDialog(null, "Contraseña incorrecta", "Login", JOptionPane.PLAIN_MESSAGE);
+                                JOptionPane.showMessageDialog(instance, "Contraseña incorrecta", "Login", JOptionPane.PLAIN_MESSAGE);
                                 return;
                             }
                         }
                         line = br.readLine();
                         iterator++;
                     }
-                    JOptionPane.showMessageDialog(null, "El correo no existe", "Login", JOptionPane.PLAIN_MESSAGE);
+                    JOptionPane.showMessageDialog(instance, "El correo no existe", "Login", JOptionPane.PLAIN_MESSAGE);
 
                 } catch (FileNotFoundException ex) {
                     throw new RuntimeException(ex);
